@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Task331"></activity>
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".Loaders" />
+        <activity android:name=".Task331" />
         <activity android:name=".AsyncTaskLayout" />
         <activity android:name=".Looper1" />
         <activity android:name=".ThreadUi" />

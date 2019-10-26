@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected Button Looper;
     protected Button AsyncTask;
     protected Button SomeApp;
+    protected Button Loader;
 
 
     @Override
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SomeApp = findViewById(R.id.someanother);
         SomeApp.setOnClickListener(this);
 
+        Loader = findViewById(R.id.loader);
+        Loader.setOnClickListener(this);
+
 
         Thread mainThread = Thread.currentThread();
         InfoTextView.setText("Текущий поток: " + mainThread.getName());
@@ -47,6 +51,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         InfoTextView.append("\nНовое имя потока: " + mainThread.getName());
 
 
+    }
+
+    public void onClickPlayMusic(View view) {
+        startService(
+                new Intent(MainActivity.this, MyService.class));
+    }
+    public void onClickStopMusic(View view) {
+        stopService(
+                new Intent(MainActivity.this, MyService.class));
     }
 
 
@@ -80,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.AsyncTask:
                 goToActive(Task331.class);
+                break;
+            case R.id.loader:
+                goToActive(Loaders.class);
                 break;
 
                 default:
