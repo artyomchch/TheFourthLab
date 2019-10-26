@@ -3,7 +3,6 @@ package com.example.fourthlab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +15,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected TextView LogTextView;
     protected int c = 1;
     protected Button ThreadUI;
-
+    protected Button Looper;
+    protected Button AsyncTask;
+    protected Button SomeApp;
 
 
     @Override
@@ -29,6 +30,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ThreadUI = findViewById(R.id.threadui);
         ThreadUI.setOnClickListener(this);
+
+        Looper = findViewById(R.id.looper);
+        Looper.setOnClickListener(this);
+
+        AsyncTask = findViewById(R.id.AsyncTask);
+        AsyncTask.setOnClickListener(this);
+
+        SomeApp = findViewById(R.id.someanother);
+        SomeApp.setOnClickListener(this);
 
 
         Thread mainThread = Thread.currentThread();
@@ -60,9 +70,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId()) {
             case R.id.threadui:
-
                 goToActive(ThreadUi.class);
                 break;
+            case R.id.looper:
+                goToActive(Looper1.class);
+                break;
+            case R.id.someanother:
+                goToActive(AsyncTaskLayout.class);
+                break;
+            case R.id.AsyncTask:
+                goToActive(Task331.class);
+                break;
+
+                default:
+                    break;
         }
 
     }

@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ThreadUi"></activity>
+        <activity android:name=".Task331"></activity>
+        <activity android:name=".AsyncTaskLayout" />
+        <activity android:name=".Looper1" />
+        <activity android:name=".ThreadUi" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
